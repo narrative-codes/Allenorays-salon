@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allenora's | Luxury Beauty Salon</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Allenora's</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#booking" class="nav-book-btn">Book Now</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button id="cart-btn" aria-label="Open Cart">
+                    <i class="fa-solid fa-shopping-bag"></i>
+                    <span id="cart-count">0</span>
+                </button>
+                <button id="mobile-menu-btn" class="mobile-only" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Drawer -->
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Bag</h3>
+            <button id="close-cart-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items">
+            <div class="empty-cart-msg">Your bag is empty.</div>
+            <!-- Items will be injected here via JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Total:</span> <span id="cart-total-price">$0.00</span></div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+    <div id="cart-overlay"></div>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-bg" style="background-image: url('assets/images/hero_bg.png');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal">
+            <h1>Allenora's</h1>
+            <p class="tagline">Where Glamour Meets Elegance</p>
+            <a href="#booking" class="btn btn-primary pulse">Book Appointment</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="container layout-grid-2">
+            <div class="about-image reveal">
+                <img src="assets/images/about.png" alt="Allenora's Salon Interior">
+            </div>
+            <div class="about-text reveal">
+                <h2 class="section-title">Our Story</h2>
+                <p>Welcome to Allenora's, a sanctuary of beauty and grace. We believe that true luxury lies in the
+                    details—the soft flicker of a candle, the perfect shade of blush, and the feeling of complete
+                    relaxation.</p>
+                <p>Our team of master artists is dedicated to enhancing your natural beauty with high-end, bespoke
+                    services in a cozy, glamorous boutique setting. Experience the art of soft-glam makeup and premium
+                    skincare.</p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Signature_placeholder.svg"
+                    alt="Founder Signature" class="signature">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section-padding bg-light">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title text-center">Bespoke Services</h2>
+                <p class="text-center">Indulge in our luxurious treatments.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <h3>Makeup Application</h3>
+                    <p class="price">From $120</p>
+                    <p>Soft glam, full glam, or natural radiance. Tailored to perfection.</p>
+                </div>
+                <div class="service-card reveal" style="transition-delay: 0.1s">
+                    <i class="fa-solid fa-spa"></i>
+                    <h3>Luxury Facials</h3>
+                    <p class="price">From $150</p>
+                    <p>Deep cleansing and glowing treatments using premium products.</p>
+                </div>
+                <div class="service-card reveal" style="transition-delay: 0.2s">
+                    <i class="fa-solid fa-ring"></i>
+                    <h3>Bridal Packages</h3>
+                    <p class="price">From $350</p>
+                    <p>Comprehensive beauty prep for your most special day.</p>
+                </div>
+                <div class="service-card reveal" style="transition-delay: 0.3s">
+                    <i class="fa-solid fa-eye"></i>
+                    <h3>Lash & Brow</h3>
+                    <p class="price">From $60</p>
+                    <p>Extensions, lifts, and precise sculpting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="shop section-padding">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title text-center">The Beauty Boutique</h2>
+                <p class="text-center">Take the Allenora's glow home with you.</p>
+            </div>
+            <div class="shop-grid">
+                <div class="product-card reveal">
+                    <div class="product-img-wrapper">
+                        <img src="assets/images/product_foundation.png" alt="Luminous Foundation">
+                    </div>
+                    <div class="product-info">
+                        <h3>Luminous Silk Foundation</h3>
+                        <p class="price">$65.00</p>
+                        <button class="btn btn-outline add-to-cart" data-name="Luminous Silk Foundation"
+                            data-price="65.00">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card reveal" style="transition-delay: 0.1s">
+                    <div class="product-img-wrapper">
+                        <img src="assets/images/product_palette.png" alt="Rose Gold Palette">
+                    </div>
+                    <div class="product-info">
+                        <h3>Rose Gold Radiance Palette</h3>
+                        <p class="price">$58.00</p>
+                        <button class="btn btn-outline add-to-cart" data-name="Rose Gold Radiance Palette"
+                            data-price="58.00">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card reveal" style="transition-delay: 0.2s">
+                    <div class="product-img-wrapper">
+                        <img src="https://i.pinimg.com/736x/a6/b0/59/a6b0597e2d5518cdfdbdda693061852d.jpg"
+                            alt="Glossy Lip Kit">
+                    </div>
+                    <div class="product-info">
+                        <h3>Signature Gloss Kit</h3>
+                        <p class="price">$42.00</p>
+                        <button class="btn btn-outline add-to-cart" data-name="Signature Gloss Kit"
+                            data-price="42.00">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section-padding bg-light">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title text-center">Our Portfolio</h2>
+            </div>
+            <div class="masonry-grid">
+                <!-- Using placeholders or repeated images for gallery effect -->
+                <div class="gallery-item reveal">
+                    <img src="assets/images/hero_bg.png" alt="Gallery Look 1">
+                    <div class="overlay"><i class="fa-solid fa-heart"></i></div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="assets/images/model4.jpg" alt="Gallery Look 2">
+                    <div class="overlay"><i class="fa-solid fa-heart"></i></div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="assets/images/model2.jpg" alt="Gallery Look 3">
+                    <div class="overlay"><i class="fa-solid fa-heart"></i></div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="assets/images/model3.jpg" alt="Gallery Look 4">
+                    <div class="overlay"><i class="fa-solid fa-heart"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials section-padding">
+        <div class="container">
+            <h2 class="section-title text-center reveal">What They Say</h2>
+            <div class="testimonial-carousel reveal">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"The most luxurious salon experience I've ever had. My makeup lasted all night and I felt like a
+                        goddess."</p>
+                    <h4>- Emma S.</h4>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"Allenora's bridal package was a dream. The team is so talented and the atmosphere is so
+                        calming."</p>
+                    <h4>- Sophia M.</h4>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"I am obsessed with their Luminous Foundation. Highly recommend!"</p>
+                    <h4>- Olivia R.</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title text-center reveal">Meet The Artists</h2>
+            <div class="team-grid">
+                <div class="team-member reveal">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="assets/images/artist.jpg" alt="artist">
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Elena</h3>
+                                <p>Lead Makeup Artist</p>
+                                <div class="socials">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member reveal" style="transition-delay: 0.1s">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="assets/images/model.jpg" alt="model">
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Mia</h3>
+                                <p>Skincare Specialist</p>
+                                <div class="socials">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking section-padding">
+        <div class="container layout-grid-2 align-center">
+            <div class="booking-text reveal">
+                <h2 class="section-title">Reserve Your Time</h2>
+                <p>Book your appointment today and let us pamper you. For special events or bridal inquiries, please
+                    mention details in your message.</p>
+                <div class="contact-info">
+                    <p><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fa-solid fa-envelope"></i> hello@allenoras.com</p>
+                    <p><i class="fa-solid fa-location-dot"></i> 123 Luxury Ave, Beverly Hills, CA</p>
+                </div>
+            </div>
+            <div class="booking-form-wrapper reveal">
+                <form id="booking-form">
+                    <div class="form-group">
+                        <input type="text" id="name" required placeholder=" ">
+                        <label for="name">Full Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required placeholder=" ">
+                        <label for="email">Email Address</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="service" required>
+                            <option value="" disabled selected>Select a Service</option>
+                            <option value="makeup">Makeup Application</option>
+                            <option value="facial">Luxury Facial</option>
+                            <option value="bridal">Bridal Package</option>
+                            <option value="lashes">Lash & Brow</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" id="date" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full pulse">Request Appointment</button>
+                    <div class="success-msg" id="form-success">Thank you! Your request has been sent.</div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h2>Allenora's</h2>
+                <p>Elevating beauty through art and luxury.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#booking">Book</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Stay Glowing</h3>
+                <p>Subscribe for exclusive beauty tips and offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Allenora's Luxury Beauty Salon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
